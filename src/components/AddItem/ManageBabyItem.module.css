@@ -1,0 +1,27 @@
+.send_results_button {
+  background: #8cff9e;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.delete_button {
+  background: #cd5c5c;
+  cursor: pointer;
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.yes_button {
+  background: #cd5c5c;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.no_button {
+  background: #cd5c5c;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 10px;
+  margin-left: '10px';
+}

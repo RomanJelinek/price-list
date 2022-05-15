@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BabyItem from './BabyItem/BabyItem';
-import AddBabyItem from './AddItem/AddBabyItem';
+import ManageBabyItem from './AddItem/ManageBabyItem';
 import Summary from './Summary';
 import Modal from './Modal/Modal';
 import AddItemIcon from './AddItemIcon/AddItemIcon';
@@ -94,7 +94,7 @@ const Baby = ({ babyItems }) => {
       </div>
       {modal && (
         <Modal handleModal={handleModal}>
-          <AddBabyItem
+          <ManageBabyItem
             updateItems={updateItems}
             text={textToSend}
             selectedItem={selectedItem}

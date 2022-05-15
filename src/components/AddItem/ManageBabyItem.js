@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styles from './ManageBabyItem.module.css';
 
-const AddBabyItem = ({ updateItems, text, selectedItem }) => {
+
+const ManageBabyItem = ({ updateItems, text, selectedItem }) => {
   const [showError, setShowError] = useState(false);
   const [values, setValues] = useState({
     title: '',
-    value: 0,
+    value: "",
     color: 0,
   });
   const [itemToUpdate, setItemToUpdate] = useState({
@@ -14,6 +16,7 @@ const AddBabyItem = ({ updateItems, text, selectedItem }) => {
     color: 0,
   });
   const [sending, setSending] = useState(false);
+  const [deleteIntention, setDeleteIntention] = useState(false)
 
   useEffect(() => {
     if (text.type === 'update') {
@@ -67,31 +70,62 @@ const AddBabyItem = ({ updateItems, text, selectedItem }) => {
           onChange={getValues}
         ></input>
       </li>
-      {!sending ?
+      {!sending ? (
         <>
           <button
             onClick={() => sendResults('')}
-            style={{ background: '#8cff9e', cursor: 'pointer' }}
+            className={styles.send_results_button}
           >
             {text.sendButton}
           </button>
-          {text.type === 'update' && (
-            <button
-              onClick={() => sendResults('delete')}
-              style={{
-                background: '#CD5C5C',
-                cursor: 'pointer',
-                marginTop: '20px',
-              }}
-            >
-              Smazat
-            </button>
+          {!deleteIntention ? (
+            <>
+              {text.type === 'update' && (
+                <button
+                  onClick={() => setDeleteIntention(true)}
+                  className={styles.delete_button}
+                >
+                  Smazat
+                </button>
+              )}
+            </>
+          ) : (
+            <>
+              <p>Opravdu chcete položku smazat?</p>
+              <div>
+                <button
+                  onClick={() => sendResults('delete')}
+                  style={{
+                    background: '#CD5C5C',
+                    cursor: 'pointer',
+                    fontSize: '15px',
+                    marginBottom: '10px',
+                  }}
+                >
+                  Ano
+                </button>
+                <button
+                  onClick={() => setDeleteIntention(false)}
+                  style={{
+                    background: '#CD5C5C',
+                    cursor: 'pointer',
+                    fontSize: '15px',
+                    marginLeft: '10px',
+                    marginBottom: '10px',
+                  }}
+                >
+                  Ne
+                </button>
+              </div>
+            </>
           )}
-        </> : <h3>Odesílám ...</h3>
-      }
+        </>
+      ) : (
+        <h3>Odesílám ...</h3>
+      )}
       {showError && <span style={{ color: 'red' }}>{text.error}</span>}
     </>
   );
 };
 
-export default AddBabyItem;
+export default ManageBabyItem;

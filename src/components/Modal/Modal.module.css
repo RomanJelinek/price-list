@@ -31,11 +31,11 @@
   margin: 20px;
    list-style-type: none;
 
-
 }
 
 .modal li input {
   margin-left: 10px;
+  font-size: 22px;
   background-color: transparent;
   border: 'none';
   outline: none;

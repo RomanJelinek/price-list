@@ -1,0 +1,70 @@
+.modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  background-color: papayawhip;
+  z-index: 1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal h1 {
+  font-size: 26px;
+  margin: 5px 30px 30px 10px;
+}
+
+.modal ul {
+  list-style-type: none;
+}
+
+.modal ul button {
+  border-radius: 5px;
+  padding: 5px;
+  background-color: '#BCD793';
+  border: none;
+  cursor: 'pointer';
+}
+
+.modal ul li {
+  margin-bottom: 20px;
+}
+
+.modal ul li input {
+  margin-left: 10px;
+  background-color: transparent;
+  border: 'none';
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  width: 60%;
+}
+
+.modal ul li input:focus {
+  outline: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.7;
+}
+
+.closeButton {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  font-size: 25px;
+  cursor: pointer;
+  color: "red";
+}

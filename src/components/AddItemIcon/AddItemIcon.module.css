@@ -1,0 +1,19 @@
+.addItemIcon {
+  background: url('/racochejl.jpeg');
+  background-position: 25% 75%;
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  transition: all 0.2s ease-in-out;
+  z-index: 2;
+}
+
+.addItemIcon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}

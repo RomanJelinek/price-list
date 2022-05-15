@@ -31,7 +31,6 @@ const AddBabyItem = ({ updateItems, text, selectedItem }) => {
 
   const sendResults = async (isDelete) => {
     const type = isDelete ? isDelete : text.type;
-    console.log(type);
     const valuesToSend = { type: type, itemToUpdate, values };
     if (values.title !== '' && values.value > 0) {
       showError && setShowError(false);
@@ -50,9 +49,8 @@ const AddBabyItem = ({ updateItems, text, selectedItem }) => {
   };
 
   return (
-    <div>
+    <>
       <h1>{text.headline}</h1>
-      <ul>
         <li>
           {text.item}{' '}
           <input name="title" value={values.title} onChange={getValues}></input>
@@ -72,19 +70,18 @@ const AddBabyItem = ({ updateItems, text, selectedItem }) => {
         >
           {text.sendButton}
         </button>
-        <button
+       {text.type === "update" && <button
           onClick={() => sendResults('delete')}
           style={{
             background: '#CD5C5C',
             cursor: 'pointer',
-            marginLeft: '30%',
+            marginTop: '20px',
           }}
         >
           Smazat
-        </button>
-      </ul>
+        </button>}
       {showError && <span style={{ color: 'red' }}>{text.error}</span>}
-    </div>
+    </>
   );
 };
 

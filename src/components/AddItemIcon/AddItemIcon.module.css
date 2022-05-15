@@ -17,3 +17,9 @@
   transform: scale(1.2);
   cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+  .addItemIcon {
+    top: 80px;
+  }
+}

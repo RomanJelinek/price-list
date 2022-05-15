@@ -1,0 +1,18 @@
+.wrapper {
+  background-color: #b5e0f1;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    flex-direction: column;
+  }
+}

@@ -8,7 +8,7 @@ const summaryWrapper = {
   width: 350,
   height: 250,
   borderRadius: '10px',
-  margin: '20px auto',
+  margin: '30px auto 0 auto',
   textAlign: 'right',
   padding: 10,
 };

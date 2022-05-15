@@ -1,4 +1,6 @@
 .modal {
+  min-width: 350px;
+  min-height: 300px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -9,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .modal h1 {
@@ -16,11 +19,7 @@
   margin: 5px 30px 30px 10px;
 }
 
-.modal ul {
-  list-style-type: none;
-}
-
-.modal ul button {
+.modal button {
   border-radius: 5px;
   padding: 5px;
   background-color: '#BCD793';
@@ -28,11 +27,14 @@
   cursor: 'pointer';
 }
 
-.modal ul li {
-  margin-bottom: 20px;
+.modal li {
+  margin: 20px;
+   list-style-type: none;
+
+
 }
 
-.modal ul li input {
+.modal li input {
   margin-left: 10px;
   background-color: transparent;
   border: 'none';
@@ -43,10 +45,10 @@
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: groove;
-  width: 60%;
+  width: 300px;
 }
 
-.modal ul li input:focus {
+.modal li input:focus {
   outline: none;
 }
 

@@ -4,6 +4,8 @@ import AddBabyItem from './AddItem/AddBabyItem';
 import Summary from './Summary';
 import Modal from './Modal/Modal';
 import AddItemIcon from './AddItemIcon/AddItemIcon';
+import styles from './BabyItems.module.css';
+
 
 const TEXTS = {
   addItem: {
@@ -22,18 +24,6 @@ const TEXTS = {
     error: 'Prosím zkontroluj, zda máš vše vyplněné správně.',
     type: 'update',
   },
-};
-
-const wrapper = {
-  backgroundColor: '#B5E0F1',
-  minHeight: '100vh',
-  textAlign: 'center',
-};
-
-const columns = {
-  display: 'flex',
-  flexWrap: 'wrap',
-  margin: '0 50px',
 };
 
 const Baby = ({ babyItems }) => {
@@ -82,10 +72,10 @@ const Baby = ({ babyItems }) => {
   }, []);
   return (
     <>
-      <div style={wrapper}>
+      <div className={styles.wrapper}>
         <AddItemIcon handleModal={handleModal} />
         <h1 style={{ padding: '30px 0' }}>Výbavička pro Mikuláška</h1>
-        <div style={columns}>
+        <div className={styles.columns}>
           {itemsToShow && (
             <>
               {itemsToShow.map((babyItem) => {
